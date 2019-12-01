@@ -2,7 +2,7 @@
 {% load bootstrap3 %}
 
 {% block group_content %}
-<h4>Create A New Neighborhood</h4>
+<h4>Create A New Community</h4>
   <form method="POST" action="{% url 'neighborhood:create' %}" id="groupForm">
   	{% csrf_token %}
   	{% bootstrap_form form %}
