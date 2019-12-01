@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'bootstrap3',
+    'bootstrap4',
+    'crispy_forms',
     'neighborhood',
     'accounts',
     'posts',

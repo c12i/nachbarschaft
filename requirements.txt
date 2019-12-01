@@ -1,7 +1,9 @@
 astroid==2.2.5
+beautifulsoup4==4.8.1
 cffi==1.13.2
 Django==1.11.23
 django-bootstrap3==11.1.0
+django-bootstrap4==1.0.1
 django-braces==1.13.0
 django-crispy-forms==1.8.1
 dodgy==0.1.9
@@ -28,5 +30,6 @@ requirements-detector==0.6
 setoptconf==0.2.0
 six==1.13.0
 snowballstemmer==2.0.0
+soupsieve==1.9.5
 typed-ast==1.4.0
 wrapt==1.11.2
