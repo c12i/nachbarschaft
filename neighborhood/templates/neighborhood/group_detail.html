@@ -2,22 +2,28 @@
 
 {% block pregroup %}
 
-
-<h1>{{group.name}}</h1>
-<h2> Resident Count: {{group.members.count}}</h2>
-
-  <div class="content">
-
-
-				{% if user in group.members.all %}
-					<a href="{% url 'neighborhood:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span> Leave</a>
-				{% else %}
-					<a href="{% url 'neighborhood:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span> Join</a>
-				{% endif %}
-
-
-
+<div class="col-md-4">
+	<h1>{{group.name}}</h1>
+	<h2> Resident Count: {{group.members.count}}</h2>
+	
+	<div class="content">
+	
+	
+		{% if user in group.members.all %}
+		<a href="{% url 'neighborhood:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
+			<i class="fas fa-times"></i> 
+			Leave</a>
+		{% else %}
+		<a href="{% url 'neighborhood:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
+			<i class="fas fa-plus"></i> 
+			Join</a>
+		{% endif %}
+	
+	
+	
+	</div>
 </div>
+
 
 {% endblock %}
 
@@ -30,9 +36,9 @@
 
 	{% else %}
 
-		{% for post in group.posts.all %}
-			{% include "posts/_post.html" %}
-		{% endfor %}
+	{% for post in group.posts.all %}
+	{% include "posts/_post.html" %}
+	{% endfor %}
 
 	{% endif %}
 </div>
