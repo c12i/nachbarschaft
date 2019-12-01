@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 
 class TestPage(TemplateView):
-    template_name = 'test.html'
+    template_name = 'home.html'
 
 class ThanksPage(TemplateView):
     template_name = 'thanks.html'
