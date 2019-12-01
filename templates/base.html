@@ -38,7 +38,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
               aria-labelledby="navbarDropdownMenuLink-333">
-              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="{% url 'posts:for_user' username=user.username %}">Profile</a>
               <a class="dropdown-item" href="{%url 'posts:create'%}">Post</a>
               <a class="dropdown-item" href="{%url 'neighborhood:all'%}">Neighborhoods</a>
               <a class="dropdown-item" href="{%url 'neighborhood:create'%}">Create Community</a>
