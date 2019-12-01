@@ -1,20 +1,21 @@
-<div class="post media mb-3">
-    <h4>{{ post.message_html|safe }}</h4>
-    <div class="media-body">
-        <h5 class="media-heading">
+<div class="post card mb-3">
+    
+    <div class="card-body">
+            <h3 class="card-title">{{ post.message_html|safe }}</h3>
+        <h6 class="card-heading">
             <span class="username"><a
                     href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
-            <time class="time"><a
-                    href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at|date:"D M Y" }}</a></time>
+            <time class="time">{{ post.created_at|date:"D M Y" }}</time>
             {% if post.group %}
-            <span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+            <span class="group-name">in <a href="{% url 'neighborhood:single' slug=post.group.slug %}">{{ post.group.name }}</a></span>
             {% endif %}
-        </h5>
+        </h6>
         <div class="media-footer">
             {% if user.is_authenticated and post.user == user and not hide_delete %}
-            <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-outline-danger">
+            <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-outline-danger no-b">
                 <i class="far fa-trash-alt"></i>
             </a>
+            <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}" class="btn btn-outline-dark no-b"><i class="fas fa-angle-double-right"></i></a>
             {% endif %}
         </div>
     </div>

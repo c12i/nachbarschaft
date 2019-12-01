@@ -11,11 +11,11 @@
 	
 	
 		{% if user in group.members.all %}
-		<a href="{% url 'neighborhood:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
+		<a href="{% url 'neighborhood:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning no-b">
 			<i class="fas fa-times"></i> 
 			Leave</a>
 		{% else %}
-		<a href="{% url 'neighborhood:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
+		<a href="{% url 'neighborhood:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning no-b">
 			<i class="fas fa-plus"></i> 
 			Join</a>
 		{% endif %}

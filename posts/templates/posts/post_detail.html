@@ -1,7 +1,34 @@
 {% extends "posts/post_base.html" %}
 
+{% block prepost %}
+<div class="col-md-4">
+    <a href="{% url 'posts:for_user' username=post.user.username %}">
+        <h1>@{{ post.user.username }}</h1>
+    </a>
+    <time class="time"><a
+            href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at|date:"D M Y" }}</a></time>
+    {% if post.group %}
+    <span class="group-name">in <a
+            href="{% url 'neighborhood:single' slug=post.group.slug %}">{{ post.group.name }}</a></span>
+    {% endif %}
+</div>
+{% endblock %}
+
 {% block post_content %}
-<div class="col-md-12">
-    {% include "posts/_post.html" %}
+<div class="col-md-8">
+    <div class="post media mb-3">
+        <h4>{{ post.message_html|safe }}</h4>
+        <div class="media-body">
+            <div class="media-footer">
+                {% if user.is_authenticated and post.user == user and not hide_delete %}
+                <a href="{% url 'posts:delete' pk=post.pk %}" 
+                title="delete" class="btn btn-outline-danger"
+                style="margin-left: 10%;">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

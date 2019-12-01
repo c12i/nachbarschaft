@@ -1,0 +1,24 @@
+.jumbotron{
+    background: url(https://picsum.photos/1920/1080?grayscale);
+}
+
+.jumbotron a{
+    color: #fff;
+}
+
+.no-b{
+    border-radius: 0;
+}
+
+.list-group a{
+    color: #333;
+}
+
+.list-group a:hover{
+    text-decoration: none;
+}
+
+.list-group-item:hover{
+    background: #333;
+    color: #fff;
+}
