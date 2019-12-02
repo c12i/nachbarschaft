@@ -11,6 +11,8 @@
 
 > If you are like me, You really don’t know what is happening in your neighborhood most of the time. What if an important meeting happens, theft or even death wouldn’t you like to know about it.
 
+<img alt="Version" src="screenshot.png" />
+
 ## Technologies used
 
 1. Python3
@@ -18,6 +20,7 @@
 3. MDBootstrap 4.8.10
 4. jQuery 3.4.1
 5. Django 1.11.23
+6. Javascript; canvas star effect credit goes to [Thibka](http://codepen.io/Thibka/pen/mWGxNj)
 
 ## Requirements
 
