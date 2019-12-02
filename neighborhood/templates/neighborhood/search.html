@@ -1,0 +1,23 @@
+{% extends "neighborhood/group_base.html" %}
+
+{% block pregroup %}
+<div class="col-md-4">
+    <h2>{{businesses.count}} result{{businesses|pluralize}} for {{message}}</h2>
+</div>
+{%endblock%}
+
+{% block group_content %}
+<div class="col-md-8">
+    {%for business in businesses%}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h3>{{business.name}}</h3>
+            <span class="badge badge-dark float-right">{{business.category}}</span>
+            <small class="text-muted">{{business.group.name}}</small>
+            <p><i class="fas fa-map-marker-alt"></i> {{business.group.location}}</p>
+            <p>{{business.description}}</p>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}

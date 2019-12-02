@@ -66,7 +66,7 @@
 		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 			{%for business in group.businesses.all%}
 			<div class="card card-body mb-4 no-b">
-				<h3>{{business.name}} <span class="mb-4 badge badge-dark">{{business.category}}</span></h3>
+				<h3>{{business.name}} <span class="mb-4 badge badge-dark float-right">{{business.category}}</span></h3>
 				<p><i class="fas fa-map-marker-alt"></i>  {{business.group.location}}</p>
 				<p>{{business.description}}</p>
 			</div>
