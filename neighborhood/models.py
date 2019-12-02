@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.text import slugify
+from django.db.models import Q
 # from accounts.models import User
 
 import misaka
@@ -49,3 +50,23 @@ class GroupMember(models.Model):
 
     class Meta:
         unique_together = ("group", "user")
+
+
+class Business(models.Model):
+    group = models.ForeignKey(Group, related_name="businesses")
+    name = models.CharField(max_length=144)
+    description = models.TextField()
+    category = models.CharField(max_length=144)
+
+    def __str__(self):
+        return self.name
+
+    def create_business(self):
+        self.save()
+
+    @classmethod
+    def find_business(cls, business_id):
+        return cls.objects.filter(id = business_id)
+
+    def get_absolute_url(self):
+        return reverse("neighborhood:single", kwargs={"slug": self.group.slug})

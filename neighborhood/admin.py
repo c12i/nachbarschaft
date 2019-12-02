@@ -9,3 +9,4 @@ class GroupMemberInline(admin.TabularInline):
 
 
 admin.site.register(models.Group)
+admin.site.register(models.Business)
