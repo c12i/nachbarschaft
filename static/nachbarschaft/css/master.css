@@ -1,5 +1,7 @@
 .jumbotron{
-    background: url(https://picsum.photos/1920/1080?grayscale);
+    background: url(https://picsum.photos/id/220/1920/1080);
+    background-position: center;
+    background-size: cover;
 }
 
 .jumbotron a{
@@ -30,4 +32,8 @@
 ::selection{
     background: #333;
     color: #fff;
+}
+
+.mr{
+    margin-right: 10px;
 }
