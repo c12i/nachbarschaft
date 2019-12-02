@@ -68,5 +68,10 @@ class Business(models.Model):
     def find_business(cls, business_id):
         return cls.objects.filter(id = business_id)
 
+    @classmethod
+    def search_businesses(cls, search_term):
+        results = cls.objects.filter(Q(name__icontains=search_term)|Q(description__icontains=search_term)|Q(category__icontains=search_term))
+        return results
+
     def get_absolute_url(self):
         return reverse("neighborhood:single", kwargs={"slug": self.group.slug})

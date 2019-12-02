@@ -28,7 +28,7 @@
 	<div class="list-group no-b">
 		{% for group in object_list %}
 		<a class="list-group-item no-b mb-2" href="{% url 'neighborhood:single' slug=group.slug %}">
-			<h3 class="title list-group-item-heading">{{ group.name }}</h3>
+			<h2 class="title list-group-item-heading">{{ group.name }}</h2>
 			<div class="list-group-item-text container-fluid">
 				{{ group.description_html|safe }}
 				<div class="row">
