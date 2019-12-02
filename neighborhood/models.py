@@ -16,6 +16,7 @@ register = template.Library()
 
 class Group(models.Model):
     name = models.CharField(max_length=255, unique=True)
+    location = models.CharField(max_length=144)
     slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default='')
     description_html = models.TextField(editable=False, default='', blank=True)
