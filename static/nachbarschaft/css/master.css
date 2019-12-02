@@ -26,3 +26,8 @@
 .nav-link{
     color: #333;
 }
+
+::selection{
+    background: #333;
+    color: #fff;
+}
