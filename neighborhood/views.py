@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth.mixins import(
     LoginRequiredMixin,
@@ -68,3 +69,15 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
                 "You have successfully left this group."
             )
         return super().get(request, *args, **kwargs)
+
+
+def search_results(request):
+    if request.method == "GET":
+        search_term = request.GET.get("search")
+        businesses = models.Business.search_businesses(search_term)
+        message = "{}".format(search_term)
+
+        return render(request, "neighborhood/search.html", context={"message":message,
+                                                                "businesses":businesses})
+    message = "You haven't searched for any term"
+    return render(request, "neighborhood/search.html", context={"message":message})
