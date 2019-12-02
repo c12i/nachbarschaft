@@ -1,7 +1,7 @@
 <div class="post card mb-3">
     
     <div class="card-body">
-            <h3 class="card-title">{{ post.message_html|safe }}</h3>
+            <h3 class="card-title lead">{{ post.message_html|safe }}</h3>
         <h6 class="card-heading">
             <span class="username"><a
                     href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
