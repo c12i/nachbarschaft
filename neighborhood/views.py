@@ -12,7 +12,7 @@ from neighborhood.models import Group,GroupMember
 from . import models
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
-    fields = ("name", "location", "description")
+    fields = ("name", "location", "police_contact", "hospital_contact", "description")
     model = Group
 
 class SingleGroup(generic.DetailView):
