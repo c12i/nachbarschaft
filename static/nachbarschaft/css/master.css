@@ -37,3 +37,7 @@
 .mr{
     margin-right: 10px;
 }
+
+.dropdown-toggle{
+    cursor: pointer;
+}
